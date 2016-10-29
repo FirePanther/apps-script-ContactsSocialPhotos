@@ -88,7 +88,7 @@ function authCallback(request) {
 ```
 
 - Modify the options (the object in the `opts` function), the contacts OAuth
-credentials are required (see "[Options](#Options)" above).
+credentials are required (see "[Options](#options)" above).
 - Run the `contacts` function.
 
 ### First run
