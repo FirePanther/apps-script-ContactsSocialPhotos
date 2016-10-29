@@ -1,7 +1,7 @@
 # ContactsSocialPhotos for Google Apps Script
 
-ContactsSocialPhotos scans your contacts for social network urls or ids and sets
-the  profile picture to the social network account profile picture.
+ContactsSocialPhotos scans your contacts for social network URL's or ID's and
+sets the  profile picture to the social network account profile picture.
 
 ## Setup
 
