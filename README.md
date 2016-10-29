@@ -15,36 +15,38 @@ refreshed automatically in the future.
 
 The options parameter is a JavaScript object:
 
-	{
-		// Set 'contacts' (object) to:
-		// { clientId: '...', clientSecret: '...' }
-		// (Generate credentials for OAuth. In Apps Script:
-		//  Resources > Developer Console Project... > 'project-id-...'
-		//  > Credentials )
-		contacts: {
-		  clientId: '...',
-		  clientSecret: '...'
-		},
-		
-		// Set 'xing' (object or boolean) to:
-		// false to deactivate
-		// true to activate without OAuth (only public profiles)
-		// { consumerKey : '...', consumerSecret: '...' } to activate with OAuth
-		// (Generate test key for OAuth:
-		//  https://dev.xing.com/applications/dashboard )
-		xing: {
-		  consumerKey: '...',
-		  consumerSecret: '...'
-		},
-		
-		// boolean, if the contacts url addresses should be checked for facebook
-		// profile urls
-		facebook: 1,
-		
-		// boolean, if the contacts email addresses should be checked for
-		// gravatars (could slow down the first runs)
-		gravatar: 1
-	}
+```
+{
+	// Set 'contacts' (object) to:
+	// { clientId: '...', clientSecret: '...' }
+	// (Generate credentials for OAuth. In Apps Script:
+	//  Resources > Developer Console Project... > 'project-id-...'
+	//  > Credentials )
+	contacts: {
+	  clientId: '...',
+	  clientSecret: '...'
+	},
+	
+	// Set 'xing' (object or boolean) to:
+	// false to deactivate
+	// true to activate without OAuth (only public profiles)
+	// { consumerKey : '...', consumerSecret: '...' } to activate with OAuth
+	// (Generate test key for OAuth:
+	//  https://dev.xing.com/applications/dashboard )
+	xing: {
+	  consumerKey: '...',
+	  consumerSecret: '...'
+	},
+	
+	// boolean, if the contacts url addresses should be checked for facebook
+	// profile urls
+	facebook: 1,
+	
+	// boolean, if the contacts email addresses should be checked for
+	// gravatars (could slow down the first runs)
+	gravatar: 1
+}
+```
 
 ## Usage
 
@@ -57,32 +59,33 @@ give it a project name.
 - Click on `Save` and add the following code (you can remove the `myFunction`
 function).:
 
+```
+// The main function to run the ContactsSocialPhotos
+function contacts() {
+	ContactsSocialPhotos.run(opts());
+}
 
-	// The main function to run the ContactsSocialPhotos
-	function contacts() {
-		ContactsSocialPhotos.run(opts());
-	}
-	
-	// Options (see "Options" in the README.md)
-	function opts() {
-		return {
-			contacts: {
-				clientId: '...',
-				clientSecret: '...'
-			},
-			xing: {
-				consumerKey: '...',
-				consumerSecret: '...'
-			},
-			facebook: 1,
-			gravatar: 1
-		};
-	}
-	
-	// This function will be called after any OAuth authorization.
-	function authCallback(request) {
-		return ContactsSocialPhotos.authCallback(request, opts());
-	}
+// Options (see "Options" in the README.md)
+function opts() {
+	return {
+		contacts: {
+			clientId: '...',
+			clientSecret: '...'
+		},
+		xing: {
+			consumerKey: '...',
+			consumerSecret: '...'
+		},
+		facebook: 1,
+		gravatar: 1
+	};
+}
+
+// This function will be called after any OAuth authorization.
+function authCallback(request) {
+	return ContactsSocialPhotos.authCallback(request, opts());
+}
+```
 
 - Modify the options (the object in the `opts` function), the contacts OAuth
 credentials are required (see "[Options](#Options)" above).
