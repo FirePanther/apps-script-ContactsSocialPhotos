@@ -29,6 +29,20 @@ function OAuth() {
 }
 
 /**
+ * Manually reset oauth tokens.
+ */
+function reset() {
+	// contacts
+	OAuth2.createService('contacts')
+		.setPropertyStore(PropertiesService.getUserProperties())
+		.reset();
+	// xing
+	OAuth1.createService('xing')
+		.setPropertyStore(PropertiesService.getUserProperties())
+		.reset();
+}
+
+/**
  * Create oauth2 contacts service.
  */
 function getContactsService(opt) {
