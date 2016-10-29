@@ -1,15 +1,21 @@
 # ContactsSocialPhotos for Google Apps Script
 
-ContactsSocialPhotos scans your contacts for social network URL's or ID's and
-sets the  profile picture to the social network account profile picture.
+ContactsSocialPhotos scans your contacts for social network URLs or IDs and
+sets the profile picture to the social network account profile picture.
 
 ## Setup
 
 ### OAuth
 
 After the first run you have to open the logs (Cmd|Ctrl + Enter) and open the
-OAuth url(s) manually, thusly (a) token(s) will be generated, wich will be
+OAuth url(s) manually, thusly (a) token(s) will be generated, which will be
 refreshed automatically in the future.
+
+In Google Developer Console add the following URL as `Authorised redirect URIs`:  
+https://script.google.com/macros/d/{SCRIPT-ID}/usercallback  
+(You can find the Script ID in `File` > `Project properties` > `Script ID`.)  
+After adding the authorized redirect URI it can take a while. Just try the
+authorization again if you get a 401 error.
 
 ### Options
 
@@ -55,9 +61,9 @@ give it a project name.
 - In `Resources` > `Libraries...` search for the library:  
 	`1NKFJku2cBHPRH_lilQPnEH1tduOO2mBm3wAq-nV_mXizNG41Qg7EYJ9v`  
 	and click on `Select`.
-- Select the newest version and let the development mode turned off.
+- Select the newest version and leave development mode turned off.
 - Click on `Save` and add the following code (you can remove the `myFunction`
-function).:
+function):
 
 ```javascript
 // The main function to run the ContactsSocialPhotos
@@ -87,7 +93,7 @@ function authCallback(request) {
 }
 ```
 
-- Modify the options (the object in the `opts` function), the contacts OAuth
+- Modify the options (the object in the `opts` function). The contacts OAuth
 credentials are required (see "[Options](#options)" above).
 - Run the `contacts` function.
 
@@ -109,5 +115,5 @@ requests so that it can continue after each crash.
 ## Add triggers (cron jobs)
 
 Click on `Resources` > `Current project's triggers` to add the `contacts`
-function as a Time-driven trigger. You could execute it once or twice a day to
+function as a `Time-driven` trigger. You could execute it once or twice a day to
 stay updated.
