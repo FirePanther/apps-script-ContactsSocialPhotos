@@ -15,7 +15,7 @@ refreshed automatically in the future.
 
 The options parameter is a JavaScript object:
 
-```
+```javascript
 {
 	// Set 'contacts' (object) to:
 	// { clientId: '...', clientSecret: '...' }
@@ -59,7 +59,7 @@ give it a project name.
 - Click on `Save` and add the following code (you can remove the `myFunction`
 function).:
 
-```
+```javascript
 // The main function to run the ContactsSocialPhotos
 function contacts() {
 	ContactsSocialPhotos.run(opts());
