@@ -5,13 +5,15 @@ sets the profile picture to the social network account profile picture.
 
 ## Setup
 
+[Watch the HowTo Setup Video](#howto-setup-video)
+
 ### OAuth
 
 After the first run you have to open the logs (Cmd|Ctrl + Enter) and open the
 OAuth url(s) manually, thusly (a) token(s) will be generated, which will be
 refreshed automatically in the future.
 
-In Google Developer Console add the following URL as `Authorised redirect URIs`:  
+In Google Developer Console add the following URL as `Authorized redirect URIs`:  
 `https://script.google.com/macros/d/{SCRIPT-ID}/usercallback`  
 (You can find the Script ID in `File` > `Project properties` > `Script ID`.)  
 After adding the authorized redirect URI it can take a while. Just try the
@@ -117,3 +119,7 @@ requests so that it can continue after each crash.
 Click on `Resources` > `Current project's triggers` to add the `contacts`
 function as a `Time-driven` trigger. You could execute it once or twice a day to
 stay updated.
+
+# HowTo Setup Video
+
+[![ContactsSocialPhotos - Howto create OAuth credentials](http://i.dv.tl/161030003838.png)](https://www.youtube.com/watch?v=pB3Xdh-7yZ4)
