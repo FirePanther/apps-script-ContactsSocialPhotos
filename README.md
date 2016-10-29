@@ -12,7 +12,7 @@ OAuth url(s) manually, thusly (a) token(s) will be generated, which will be
 refreshed automatically in the future.
 
 In Google Developer Console add the following URL as `Authorised redirect URIs`:  
-https://script.google.com/macros/d/{SCRIPT-ID}/usercallback  
+`https://script.google.com/macros/d/{SCRIPT-ID}/usercallback`  
 (You can find the Script ID in `File` > `Project properties` > `Script ID`.)  
 After adding the authorized redirect URI it can take a while. Just try the
 authorization again if you get a 401 error.
