@@ -54,7 +54,9 @@ give it a project name.
 	`1NKFJku2cBHPRH_lilQPnEH1tduOO2mBm3wAq-nV_mXizNG41Qg7EYJ9v`  
 	and click on `Select`.
 - Select the newest version and let the development mode turned off.
-- Click on `Save` and add the following code:
+- Click on `Save` and add the following code (you can remove the `myFunction`
+function).:
+
 
 	// The main function to run the ContactsSocialPhotos
 	function contacts() {
