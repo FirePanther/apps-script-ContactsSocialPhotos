@@ -15,7 +15,7 @@ function OAuth() {
 	}
 	
 	// xing with oauth
-	if (options.xing && options.xing !== 1) {
+	if (this.options.xing && this.options.xing !== 1) {
 		services.xing = getXingService();
 		if (!services.xing.hasAccess()) {
 			var authorizationUrl = services.xing.authorize();
@@ -57,7 +57,7 @@ function getContactsService(opt) {
 		.setScope('https://www.google.com/m8/feeds')
 		.setParam('login_hint', Session.getActiveUser().getEmail())
 		.setParam('access_type', 'offline')
-		.setParam('approval_prompt', 'auto');
+		.setParam('approval_prompt', 'force');
 }
 
 /**
